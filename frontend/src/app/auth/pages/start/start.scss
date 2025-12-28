@@ -1,5 +1,7 @@
-:root {
+:host {
   .loading__screen {
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     z-index: 10;
     background-color: var(--bg-color);
@@ -11,5 +13,10 @@
   header {
     display: flex;
     justify-content: space-between;
+    padding: 16px 16px 0 16px;
+
+    img {
+      width: 64px;
+    }
   }
 }
