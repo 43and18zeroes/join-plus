@@ -1,27 +1,51 @@
-:host {
-  .loading__screen {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    z-index: 10;
-    background-color: var(--bg-color);
+.loading__screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  background-color: var(--bg-color);
+  animation: loadingFadeOut 300ms ease forwards;
+  animation-delay: 1s;
 
-    img {
-      width: 265px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+  img {
+    width: 265px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: logoFly 1s ease forwards;
   }
+}
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 16px 0 16px;
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px 0 16px;
 
-    img {
-      width: 64px;
-    }
+  img {
+    width: 64px;
+  }
+}
+
+@keyframes logoFly {
+  from {
+    top: 50%;
+    left: 50%;
+    width: 265px;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    top: 16px;
+    left: 16px;
+    width: 64px;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes loadingFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 }
