@@ -1,3 +1,12 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+const pageTitle = ' Join Plus'
+
+export const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    title: 'Login' + pageTitle,
+    loadComponent: () => import('./auth/pages/start/start').then((m) => m.Start),
+  },
+];
