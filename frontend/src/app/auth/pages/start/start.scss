@@ -1,74 +1,6 @@
-// // start.scss
-// .loading__screen {
-//   position: fixed;
-//   inset: 0;
-//   z-index: 10;
-//   background-color: var(--bg-color);
-
-//   animation: loadingFadeOut 400ms cubic-bezier(0, 0, 0, 1) forwards;
-//   animation-delay: 1s;
-
-//   will-change: opacity;
-// }
-
-// .animating__logo {
-//   position: fixed;
-//   z-index: 11;
-
-//   width: 265px;
-//   top: 50%;
-//   left: 50%;
-
-//   transform:
-//     translate(-50%, -50%)
-//     scale(1);
-
-//   animation: logoFly 1s cubic-bezier(0, 0, 0, 1) forwards;
-//   animation-delay: 50000ms;
-
-//   will-change: transform;
-// }
-
-// header {
-//   display: flex;
-//   justify-content: flex-end;
-//   padding: 16px 16px 0;
-
-//   img {
-//     width: 64px;
-//   }
-// }
-
-// @keyframes logoFly {
-//   to {
-//     transform:
-//       translate(
-//         calc(-50% + 16px),
-//         calc(-50% + 16px)
-//       )
-//       scale(0.2415); // 64 / 265
-//   }
-// }
-
-// @keyframes loadingFadeOut {
-//   to {
-//     opacity: 0;
-//     pointer-events: none;
-//   }
-// }
-
-// /* Accessibility + Performance */
-// @media (prefers-reduced-motion: reduce) {
-//   .animating__logo,
-//   .loading__screen {
-//     animation: none;
-//   }
-// }
-/* Overlay Vollbild */
-// Variablen für bessere Wartbarkeit
-$logo-final-size: 78px;
-$logo-initial-scale: 1.282;
-$margin: 16px;
+// start.scss
+$margin: 38px;
+$margin-desktop: 77px;
 
 .overlay {
   position: fixed;
@@ -76,7 +8,7 @@ $margin: 16px;
   z-index: 9999;
   background: #fff;
   transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &.hidden {
     opacity: 0;
     pointer-events: none;
@@ -86,19 +18,23 @@ $margin: 16px;
 .brand-logo {
   position: fixed;
   z-index: 10000;
-  width: $logo-final-size;
+  width: 64px;
   height: auto;
   top: $margin;
   left: $margin;
-  transform: translate(
-    calc(50vw - #{$margin} - 50%), 
-    calc(50vh - #{$margin} - 50%)
-  ) scale($logo-initial-scale);
+  transform: translate(calc(50vw - #{$margin} - 50%), calc(50vh - #{$margin} - 50%)) scale(1.5625);
   will-change: transform;
   transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &.float-to-corner {
     transform: translate(0, 0) scale(1);
+  }
+
+  @media (min-width: 992px) {
+    width: 100px;
+    top: $margin-desktop;
+    left: $margin-desktop;
+    transform: translate(calc(50vw - #{$margin-desktop} - 50%), calc(50vh - #{$margin-desktop} - 50%)) scale(2.65);
   }
 }
 
