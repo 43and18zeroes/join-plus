@@ -15,7 +15,7 @@ $margin-desktop: 77px;
   }
 }
 
-.brand-logo {
+.brand__logo {
   position: fixed;
   z-index: 10000;
   width: 64px;
@@ -26,7 +26,7 @@ $margin-desktop: 77px;
   will-change: transform;
   transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &.float-to-corner {
+  &.float__to__corner {
     transform: translate(0, 0) scale(1);
   }
 
@@ -39,7 +39,7 @@ $margin-desktop: 77px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brand-logo {
+  .brand__logo {
     transition: none;
     transform: translate(0, 0) scale(1);
   }

@@ -1,14 +1,24 @@
 <!-- start.html -->
 <img
-  class="brand-logo"
-  [class.float-to-corner]="floatToCorner()"
+  class="brand__logo"
+  [class.float__to__corner]="floatToCorner()"
   src="img/logo/join-logo-323.webp"
   alt="Logo"
 />
 <div class="overlay" [class.hidden]="!overlayVisible()"></div>
 <header>
-    <div class="header__btns">
-        <button>Not a Join user</button>
-        <button>Sign up</button>
-    </div>
+  <div class="header__btns mobile__invisible">
+    <button>Not a Join user</button>
+    <button>Sign up</button>
+  </div>
 </header>
+<main>
+  <form action="">
+    <h1>Log in</h1>
+    <input type="text">
+  </form>
+  <div class="header__btns desktop__invisible">
+    <button>Not a Join user</button>
+    <button>Sign up</button>
+  </div>
+</main>
