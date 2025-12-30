@@ -14,7 +14,7 @@
   src="img/logo/join-logo-323.webp"
   alt="Logo"
 />
-<div class="overlay" *ngIf="overlayVisible()"></div>
+<div class="overlay" [class.hidden]="!overlayVisible()"></div>
 <header>
     <div class="header__btns">
         <button>Not a Join user</button>
