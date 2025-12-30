@@ -5,18 +5,18 @@
   position: fixed;
   z-index: 10;
   background-color: var(--bg-color);
-  animation: loadingFadeOut 300ms ease forwards;
+  animation: loadingFadeOut 400ms cubic-bezier(0, 0, 0, 1) forwards;
   animation-delay: 1s;
 }
 
-.animating-logo {
+.animating__logo {
   position: fixed;
   z-index: 11;
   width: 265px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: logoFly 1s ease forwards;
+  animation: logoFly 1s cubic-bezier(0, 0, 0, 1) forwards;
 }
 
 header {
