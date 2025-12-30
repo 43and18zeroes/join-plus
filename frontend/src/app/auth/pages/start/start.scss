@@ -1,3 +1,4 @@
+// start.scss
 .loading__screen {
   width: 100vw;
   height: 100vh;
@@ -6,20 +7,21 @@
   background-color: var(--bg-color);
   animation: loadingFadeOut 300ms ease forwards;
   animation-delay: 1s;
+}
 
-  img {
-    width: 265px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: logoFly 1s ease forwards;
-  }
+.animating-logo {
+  position: fixed;
+  z-index: 11;
+  width: 265px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: logoFly 1s ease forwards;
 }
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 16px 16px 0 16px;
 
   img {
